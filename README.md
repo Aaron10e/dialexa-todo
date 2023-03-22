@@ -85,7 +85,7 @@ While there are numerous other benefits, these three alone can provide a signifi
 
 Angular uses `Karma` as the built in testing engine. A typical test will look something like this...
 
-```
+```ts
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
