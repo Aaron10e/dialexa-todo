@@ -11,32 +11,35 @@ import { TodoItem } from 'src/models/todo-item';
 
 @Injectable()
 export class AppComponent implements OnInit {
-  readonly items$ = new BehaviorSubject<TodoItem[]>([]);
-  itemDescription = new FormControl('');
-  title = 'Todo';
+  public readonly items$ = new BehaviorSubject<TodoItem[]>([]);
+  public itemDescription = new FormControl('');
+  public title = 'Todo';
 
   constructor() {}  
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {
+    this.items$.next([]);
+  }
 
-  onKeydown(event: any) {
+  public onKeydown(event: any) {
     if (event.key === "Enter") {
       this.createToDoItem();
     }
   }
 
-  createToDoItem() {
+  public createToDoItem() {
     if (!this.itemDescription?.value) return;
     const items = this.items$.value;
     let lastId = items.length ? items.reduce((item, curr) => {
       return item.id < curr.id ? curr : item;
-    }).id : 1;
-    items.push({id: lastId > 1 ? (lastId++) : 1, description: this.itemDescription?.value, done:false})
-    this.items$.next(items);
+    }).id : 0;
+    const newItem = { id: lastId + 1, description: this.itemDescription?.value, done: false };
+    const newItems = [...items, newItem];
+    this.items$.next(newItems);
     this.itemDescription.setValue('');
   }
 
-  onClearItems(){
+  public onClearItems(){
     this.items$.next([]);
     this.itemDescription.setValue('');
   }
