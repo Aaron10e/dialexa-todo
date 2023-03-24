@@ -14,13 +14,16 @@ import { MatDividerModule } from '@angular/material/divider';
     AppComponent
   ],
   imports: [
+    // Vendor
     BrowserModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-    MatInputModule,
-    MatCardModule,
-    MatDividerModule
+    ReactiveFormsModule, // added
+    
+    // material
+    MatButtonModule, // added
+    MatInputModule,  // added
+    MatCardModule,   // added
+    MatDividerModule // added
   ],
   providers: [],
   bootstrap: [AppComponent]

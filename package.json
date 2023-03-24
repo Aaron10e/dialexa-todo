@@ -6,10 +6,16 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "format:write": "prettier projects/**/*.{ts,json,md,scss} --write",
+    "format:test": "prettier projects/**/*.{ts,json,md,scss} --list-different",
+    "analyze": "ng build --prod --stats-json && webpack-bundle-analyzer ./dist/my-epic-app/stats-es2015.json"
   },
   "private": true,
   "dependencies": {
+    "@angular-eslint/schematics": "^1.0.0",
     "@angular/animations": "^14.2.0",
     "@angular/cdk": "^13.0.0",
     "@angular/common": "^14.2.0",
@@ -35,6 +41,9 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~4.7.2"
+    "prettier": "^2.8.7",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "~4.7.2",
+    "webpack-bundle-analyzer": "^4.8.0"
   }
 }

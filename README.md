@@ -1,13 +1,13 @@
-# todo-next: understanding test-driven-developlment with Angular best practices
+# todo-angular: understanding test-driven-developlment with Angular best practices
 
-## todo-next: our best practices 101 project
+## todo-angular: our best practices 101 project
 
 Constructing a to-do list application utilizing Angular 2.0 and above can facilitate the acquisition of best practices for single-page applications (SPAs). This is because such an endeavor necessitates the mastery of techniques for controlling application state, managing user interactions, and developing responsive interfaces. By prioritizing the adoption of best practices, one can gain insights into not only the fundamental elements of SPA applications, but also how to ensure their security, reliability, and proper functioning.
 
 # Table of Contents
 
 - [setting up the environment](#environment)
-- [our first next app](#our-first-next-app)
+- [our first angular app](#our-first-angular-app)
 - [enforcing code style](#code-enforing)
 - [unit testing](#unit-test)
 - [git + github workflows](#section-5)
@@ -18,7 +18,8 @@ Constructing a to-do list application utilizing Angular 2.0 and above can facili
   software prequisites:
    - [vs code](<[vs](https://code.visualstudio.com)>), 
    - [git](https://git-scm.com), 
-   - [node/npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) are already installed and that we'll be developing on mac hardware–though this is largely irrelevant.
+   - [node/npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) 8.5 or later
+   - [Angular CLI](https://angular.io/cli) 14.2 or later
 
 verifiy node, git, npm:
 
@@ -31,13 +32,34 @@ john@$ %: git --version
 git version 2.32.1 (Apple Git-133)
 ```
 
-**important note:** node is an extremely popular js runtime that is used create backend applications of all sizes, with its package manager node hosts one of the richest ecosystems for developers to jump-in and begin coding. (The sever-side magic of next is powered by node "under the hood") 
+**important note:** node is an extremely popular js runtime that is used create backend applications of all sizes, with its package manager node hosts one of the richest ecosystems for developers to jump-in and begin coding.
 
-2.**initialize our first next app**
-<a name="our-first-next-app"></a>
+### VSCode Extensions
+
+This project is developed in [Visual Studio Code](https://code.visualstudio.com/). For the best development experience, install the following extensions:
+
+- **[Azure Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack)** by Microsoft
+- **[Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)** by Angular
+- **[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)** by Microsoft
+- **[Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)** by Stylelint
+- **[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)** by Prettier
+- **[npm](https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script)** by Microsoft
+- **[YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)** by Red Hat
+
+> 👉 It's highly recommended to enable "_Format on Save_" in Visual Studio Code. This will automatically format your source code using the provided [Prettier](https://prettier.io/) settings and ensures a consistent style throughout the codebase.
+
+## Development
+
+The project structure and basic concepts follow the Medium article [How to architect epic Angular app in less than 10 minutes!](https://tomastrajan.medium.com/how-to-build-epic-angular-app-with-clean-architecture-91640ed1656).
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+2.**initialize our first angular app**
+<a name="our-first-angular-app"></a>
 
 ```zsh
-mkdir todo-next && cd todo-next
+mkdir todo-angular && cd todo-angular
 npm install -g @angular/cli
 ```
 
