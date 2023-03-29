@@ -2,23 +2,22 @@
   <div class="description">
     <div class="card">
       <mat-card class="item-card">
-        <mat-card-header style="margin-left:-18px;">
+        <mat-card-header style="margin-left: -18px">
           <mat-card-title>{{ title }}</mat-card-title>
           <mat-card-subtitle>todo-angular:</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
           <mat-divider></mat-divider>
           <div class="todo-content">
-            <strong>welcome</strong> to the Angular to-do list app.
-            with some simple HMTL + CSS + TS
-            we can be begin to create interactive web pages.
+            <strong>welcome</strong> to the Angular to-do list app. with some simple HMTL + CSS + TS we can be begin to
+            create interactive web pages.
           </div>
         </mat-card-content>
       </mat-card>
     </div>
     <div class="card">
       <mat-card class="item-card">
-        <mat-card-header style="margin-left:-18px; max-height: 58px;">
+        <mat-card-header style="margin-left: -18px; max-height: 58px">
           <mat-card-title>{{ title }}</mat-card-title>
           <mat-card-subtitle>reminders:</mat-card-subtitle>
         </mat-card-header>
@@ -26,24 +25,25 @@
           <mat-divider></mat-divider>
           <div *ngIf="items$ | async as items">
             <ul *ngIf="items.length" class="items-list">
-              <li *ngFor="let item of items">{{item.description}}</li>
+              <li *ngFor="let item of items">{{ item.description }}</li>
             </ul>
             <div *ngIf="items.length">
               <mat-divider></mat-divider>
-              <br/>  
+              <br />
             </div>
-          </div>          
+          </div>
         </mat-card-content>
         <mat-card-actions>
-          <input matInput [formControl]="itemDescription" type='text' (keydown)="onKeydown($event)"/>
-          <button mat-button style="margin-left:-4px;" rounded (click)="createToDoItem()" (keydown)="onKeydown($event)">
+          <input matInput [formControl]="itemDescription" type="text" (keydown)="onKeydown($event)" />
+          <button mat-button style="margin-left: -4px" rounded (click)="createToDoItem()" (keydown)="onKeydown($event)">
             Add Item
-          </button> 
-          <button mat-button rounded (click)="onClearItems()">
-            Clear All
-          </button>      
+          </button>
+          <button mat-button style="margin-left: -4px" rounded (click)="openAddTodoDialog()">
+            Open Add Dialog
+          </button>
+          <button mat-button rounded (click)="onClearItems()">Clear All</button>
         </mat-card-actions>
-      </mat-card>      
+      </mat-card>
     </div>
   </div>
 </div>

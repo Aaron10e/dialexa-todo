@@ -1,0 +1,11 @@
+<div *ngIf="form" [formGroup]="form">
+  <div fxLayout="row" fxLayoutGap="5px">
+    <mat-form-field>
+      <input matInput formControlName="description" placeholder="Description" />
+      <mat-error *ngIf="form?.controls?.['description']?.hasError('required')">Description is required</mat-error>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row">
+    <mat-checkbox formControlName="isDone">Task Done</mat-checkbox>
+  </div>
+</div>

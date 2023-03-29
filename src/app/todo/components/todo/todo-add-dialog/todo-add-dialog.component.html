@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Add new Todo</h2>
+<mat-divider></mat-divider>
+<br />
+<mat-dialog-content>
+  <app-todo-form [todoItem]="todo"></app-todo-form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button #SaveButton color="primary" 
+  [disabled]="isFormInValid()"
+  (click)="onAdd()">Save</button>
+</mat-dialog-actions>
