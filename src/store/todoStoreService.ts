@@ -35,17 +35,21 @@ export class TodoStoreService {
   }
 
   updateTodoItem(item: TodoItem): void {
-    const index = this.todoList.findIndex(i => i.id === item.id);
+    const items = this.items$.value;
+    const index = items.findIndex(i => i.id === item.id);
     if (index !== -1) {
-      this.todoList[index] = item;
+      items[index] = item;
     }
+    this.items$.next(items);
   }
 
   deleteTodoItem(id: number): void {
-    const index = this.todoList.findIndex(i => i.id === id);
+    const items = this.items$.value;
+    const index = items.findIndex(i => i.id === id);
     if (index !== -1) {
-      this.todoList.splice(index, 1);
+      items.splice(index, 1);
     }
+    this.items$.next(items);
   }
 
   clearItems(): void {

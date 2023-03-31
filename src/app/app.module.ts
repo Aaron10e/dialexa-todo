@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
@@ -29,6 +30,7 @@ import { AppComponent } from './app.component';
     MatCheckboxModule,
     MatFormFieldModule,
     MatDialogModule,
+    MatIconModule,
 
     // todo component files
     TodoModule

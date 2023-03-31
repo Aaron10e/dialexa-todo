@@ -5,8 +5,17 @@
   <app-todo-form [todoItem]="todo"></app-todo-form>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-raised-button #SaveButton color="primary" 
-  [disabled]="isFormInValid()"
-  (click)="onAdd()">Save</button>
+  <div class="action-buttons-container">
+    <div class="left-action-button"><button mat-button (click)="onCancel()">Cancel</button></div>
+    <div class="right-action-button">
+      <button
+        mat-raised-button
+        #SaveButton
+        color="primary"
+        [disabled]="(formInvalid$ | async) === true"
+        (click)="onAdd()">
+        Save
+      </button>
+    </div>
+  </div>
 </mat-dialog-actions>

@@ -1,7 +1,9 @@
 import { TodoAddDialogComponent } from './todo/components/todo/todo-add-dialog/todo-add-dialog.component';
+import { TodoUpdateComponent } from './todo/components/todo/todo-update/todo-update.component';
 import { TodoStoreService } from 'src/store/todoStoreService';
 import { Component, Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { TodoItem } from 'src/models/todo-item';
 import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-root',
@@ -39,7 +41,14 @@ export class AppComponent {
 
   public openAddTodoDialog(): void {
     this.dialog.open(TodoAddDialogComponent, {
-      width: '300px'
+      width: '400px'
+    });
+  }
+
+  public editToDoItem(todoItem: TodoItem) {
+    this.dialog.open(TodoUpdateComponent, {
+      width: '400px',
+      data: { todoItem }
     });
   }
 }

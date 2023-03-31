@@ -1,1 +1,22 @@
-<p>add-todo works!</p>
+<h2 mat-dialog-title>Update Todo</h2>
+<mat-divider></mat-divider>
+<br />
+<mat-dialog-content>
+  <app-todo-form [todoItem]="todoItem"></app-todo-form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="action-buttons-container">
+    <div class="left-action-button"><button mat-button (click)="onCancel()">Cancel</button></div>
+    <div class="right-action-button">
+      <button
+        mat-raised-button
+        #SaveButton
+        color="primary"
+        [disabled]="(formInvalid$ | async) === true"
+        (click)="onUpdate()">
+        Save
+      </button>
+      <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+    </div>
+  </div>
+</mat-dialog-actions>

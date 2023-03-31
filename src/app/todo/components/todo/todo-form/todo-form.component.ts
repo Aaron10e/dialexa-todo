@@ -1,5 +1,5 @@
 import { FormGroup, ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl, Validators } from '@angular/forms';
-import { Component, Input, forwardRef } from '@angular/core';
+import { Component, Input, forwardRef, ChangeDetectorRef, OnInit } from '@angular/core';
 import { TodoItem } from 'src/models/todo-item';
 
 @Component({
@@ -14,23 +14,24 @@ import { TodoItem } from 'src/models/todo-item';
     }
   ]
 })
-export class TodoFormComponent implements ControlValueAccessor {
+export class TodoFormComponent implements ControlValueAccessor, OnInit {
   @Input() public todoItem?: TodoItem;
   public form!: FormGroup;
   public onChange: any = () => {};
   public onTouch: any = () => {};
 
-  constructor() {}
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
     this.form = new FormGroup({
       id: new FormControl(this.todoItem?.id ?? 0),
       description: new FormControl(this.todoItem?.description, Validators.required),
-      isDone: new FormControl(this.todoItem?.isDone)
+      isDone: new FormControl(this.todoItem?.isDone ?? false)
     });
 
     this.form.valueChanges.subscribe(value => {
       this.onChange(value);
+      this.cdr.detectChanges();
       this.onTouch();
     });
   }
@@ -47,9 +48,5 @@ export class TodoFormComponent implements ControlValueAccessor {
 
   registerOnTouched(fn: any) {
     this.onTouch = fn;
-  }
-
-  setDisabledState(isDisabled: boolean) {
-    isDisabled ? this.form.disable() : this.form.enable();
   }
 }

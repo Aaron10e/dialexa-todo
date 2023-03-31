@@ -1,0 +1,17 @@
+.action-buttons-container {
+  padding: 0;
+  display: flex;
+  gap: 55%;
+  justify-content: space-between;
+}
+
+.left-action-button {
+  display: flex;
+  text-align: left;
+}
+
+.right-action-button {
+  display: flex;
+  gap: 5px;
+  text-align: right;
+}
