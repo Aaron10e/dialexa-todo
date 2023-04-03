@@ -1,6 +1,6 @@
 import { TodoFormComponent } from '../todo-form/todo-form.component';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { TodoStoreService } from 'src/store/todoStoreService';
+import { TodoStoreService } from 'src/store/todo-store-service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { TodoItem } from 'src/models/todo-item';
 import { BehaviorSubject } from 'rxjs';

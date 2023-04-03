@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TodoFormComponent } from '../todo-form/todo-form.component';
-import { TodoStoreService } from 'src/store/todoStoreService';
+import { TodoStoreService } from 'src/store/todo-store-service';
 import { TodoItem } from 'src/models/todo-item';
 import { BehaviorSubject } from 'rxjs';
 

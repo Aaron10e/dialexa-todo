@@ -5,7 +5,7 @@ import { TodoFormComponent } from '../todo-form/todo-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TodoStoreService } from 'src/store/todoStoreService';
+import { TodoStoreService } from 'src/store/todo-store-service';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';

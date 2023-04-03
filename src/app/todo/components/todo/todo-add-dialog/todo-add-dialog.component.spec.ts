@@ -4,8 +4,8 @@ import { TodoFormComponent } from '../todo-form/todo-form.component';
 import { TodoAddDialogComponent } from './todo-add-dialog.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TodoStoreService } from 'src/store/todo-store-service';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { TodoStoreService } from 'src/store/todoStoreService';
 import { MatDividerModule } from '@angular/material/divider';
 import { By } from '@angular/platform-browser';
 

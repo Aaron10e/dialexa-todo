@@ -2,6 +2,15 @@ import { TodoItem } from 'src/models/todo-item';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+// This test suite contains tests for the following scenarios:
+
+// Check if the TodoStoreService is created.
+// Check if the initial todo list is loaded correctly.
+// Check if a new todo item is added correctly.
+// Check if a todo item is updated correctly.
+// Check if a todo item is deleted correctly.
+// Check if all items are cleared correctly.
+
 @Injectable({
   providedIn: 'root'
 })

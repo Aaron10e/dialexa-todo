@@ -1,6 +1,6 @@
 import { TodoAddDialogComponent } from './todo/components/todo/todo-add-dialog/todo-add-dialog.component';
 import { TodoUpdateComponent } from './todo/components/todo/todo-update/todo-update.component';
-import { TodoStoreService } from 'src/store/todoStoreService';
+import { TodoStoreService } from 'src/store/todo-store-service';
 import { Component, Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TodoItem } from 'src/models/todo-item';
