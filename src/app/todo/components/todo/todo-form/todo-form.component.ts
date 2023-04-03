@@ -29,11 +29,7 @@ export class TodoFormComponent implements ControlValueAccessor, OnInit {
       isDone: new FormControl(this.todoItem?.isDone ?? false)
     });
 
-    this.form.valueChanges.subscribe(value => {
-      this.onChange(value);
-      this.cdr.detectChanges();
-      this.onTouch();
-    });
+    this.cdr.detectChanges();
   }
 
   writeValue(value: any) {
