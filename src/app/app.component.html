@@ -25,7 +25,7 @@
           <mat-divider></mat-divider>
           <div *ngIf="items$ | async as items">
             <ul *ngIf="items.length" class="items-list">
-              <li *ngFor="let item of items">
+              <li *ngFor="let item of items" class="todo-item">
                 <span class="item-description">{{ item.description }}</span>
                 <button mat-menu-item class="edit_button" (click)="editToDoItem(item)">
                   <mat-icon>edit</mat-icon>
@@ -40,11 +40,18 @@
           </div>
         </mat-card-content>
         <mat-card-actions>
-          <input matInput [formControl]="itemDescription" type="text" (keydown)="onKeydown($event)" />
+          <input
+            matInput
+            [formControl]="itemDescription"
+            type="text"
+            (keydown)="onKeydown($event)"
+            name="itemDescription" />
           <button mat-button style="margin-left: -4px" rounded (click)="createToDoItem()" (keydown)="onKeydown($event)">
             Add Item
           </button>
-          <button mat-button style="margin-left: -4px" rounded (click)="openAddTodoDialog()">Open Add Dialog</button>
+          <button mat-button style="margin-left: -4px" id="open-add-dialog" rounded (click)="openAddTodoDialog()">
+            Open Add Dialog
+          </button>
           <button mat-button rounded (click)="onClearItems()">Clear All</button>
         </mat-card-actions>
       </mat-card>

@@ -32,6 +32,10 @@
   padding-top: 10px;
 }
 
+.todo-item {
+  width: 100%;
+}
+
 .description a {
   display: flex;
   align-items: center;
@@ -51,12 +55,12 @@
   justify-content: left;
 }
 
-.item-description{
+.item-description {
   padding-right: 5px;
 }
 
 .edit_button {
-  font-size: .8em;
+  font-size: 0.8em;
   padding: 0 3px 3px 1px;
   height: 2.5em;
   mat-icon {
